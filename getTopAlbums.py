@@ -1,9 +1,12 @@
 import requests
 import json
 
+albumResult = open("topArtistAlbums.txt", "w",encoding='utf-8')
+albumList = []
+
 artistNames = ['Taylor Swift','The Weeknd','Kanye West','Lana Del Rey','Kendrick Lamar','Drake','Tyler, the Creator','Billie Eilish','Arctic Monkeys','SZA','Rihanna','LIL UZI VERT','Frank Ocean','Olivia Rodrigo','Radiohead','Tame Impala','Doja Cat','Metro Boomin','Ariana Grande','Beyoncé','Harry Styles','Post Malone','Nicki Minaj','Travis Scott','Lady Gaga','Steve Lacy','pinkpantheress','Coldplay','Childish Gambino','Paramore','Kali Uchis','Gorillaz','The Neighbourhood','Bruno Mars','Dua Lipa','Miley Cyrus','The Smiths','Katy Perry','Mac Miller','Nirvana','Mac DeMarco','Eminem','Queen','Playboi Carti','Mitski','The Beatles','Joji','Lorde','A$AP Rocky','TV Girl']
 artistNames_ = ['Taylor Swift']
-apiKey = ''
+apiKey = 'c5df12da60baa31f0dfb951f69033e75'
 
 def getTopAlbums(artists):
         '''parses provided artist name list'''
@@ -15,10 +18,10 @@ def getTopAlbums(artists):
             '''creates list of they album key pairs for specific artist'''
             nameList = api_data['topalbums']['album']
             
-            
             for name in nameList:
-                    print(name['name'])
-        
+                albumResult.write(name['name']+'\n')
+                
+
 
         '''print(api_data['topalbums']['album'][0]['name'])'''
 
@@ -26,3 +29,4 @@ def getTopAlbums(artists):
 
 
 getTopAlbums(artistNames)
+albumResult.close()
