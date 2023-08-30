@@ -1,0 +1,35 @@
+.carousel {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: lightgray;
+    font-size: 24px;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    bottom: 10px;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
